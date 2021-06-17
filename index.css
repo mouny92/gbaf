@@ -1,0 +1,247 @@
+body {
+    margin: 0px 0px;
+    background-color: #F7F7F7;
+}
+
+* {
+    font-family: roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;;
+    box-sizing: border-box;
+}
+
+@font-face { 
+    font-family: cocogoose; 
+    src: url('/assets/polices/cocogoose/Cocogoose\ Pro\ Semilight-trial.ttf'); 
+} 
+
+@font-face { 
+    font-family: roboto; 
+    src: url('/assets/polices/roboto/Roboto-Light.ttf'); 
+} 
+
+
+/* Form group */
+.form-group {
+    position: relative;
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.form-group label {
+    padding-bottom: 10px;
+    font-weight: 900;
+}
+
+.form-group input {
+    width: 100%;
+}
+
+.form-group input[disabled] {
+    cursor: not-allowed;
+}
+
+.form-group .form-group-icon {
+    position: absolute;
+    z-index: 1;
+    top: 32px;
+    left: 10px;
+    font-size: 12px;
+    color: #CCC;
+    pointer-events: none;
+}
+
+.form-group.form-group-with-icon input {
+    padding-left: 30px;
+}
+
+.form-group.form-group-with-icon  .form-group-icon {
+    top: 39px;
+}
+
+.form-group.form-group-with-icon.form-group-with-text .form-group-text {
+    padding-left: 20px;
+}
+
+.form-group.form-group-with-icon.form-group-with-text .form-group-icon {
+    top: 32px;
+    left: 0px;
+}
+
+
+
+.bloc-line {
+    text-align: center;
+    padding: 0px 15px;
+    padding-top: 45px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 35px;
+    padding-top: 45px;
+    padding-bottom: 0px;
+    font-family: cocogoose, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+
+
+h2 {
+    text-align: center;
+    font-size: 25px;
+    padding-bottom: 0px;
+    font-family: cocogoose, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;    
+}
+
+
+
+.bloc-line h2 {
+    background-color: #f7f7f7;
+    display: inline-block; 
+    padding: 0px 10px;
+}
+
+
+.bloc-line-style {
+    width: 100%;
+    height: 4px;
+    background-color: #e1e2e3;
+    position: relative;
+    top: 32px;
+    z-index: -1;
+}
+
+p{
+    margin: 35px;
+    padding: 40px 35px 10px 35px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.list-bank  {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 145px 0px 145px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 15px 5px rgb(0 0 0 / 10%);
+    padding: 20px;
+    margin: 0px 150px;
+    background-color: #FFF;
+}
+
+
+li {
+    font-size: 16px;
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 10px;
+    list-style-type: none;
+    width: 125px;
+    height: 75px;
+    color: #000;
+    padding: 25px 10px 12px 10px;
+
+    
+}
+
+
+
+
+.description {
+    text-align: justify;
+    font-size: 20px;
+    margin: 60px 108px;
+    padding: 30px 200px 30px 200px;
+    line-height: 30px;
+}
+
+.img-index img {
+    text-align: center;
+    width: 60%;
+    
+}
+
+.img-index {
+    text-align: center;
+}
+
+.partners {
+    border-radius: 15px;
+    box-shadow: 0px 8px 15px 5px rgb(0 0 0 / 10%); 
+    padding: 40px 40px; 
+    max-width: 900px;
+    margin: 0px auto;
+    background-color: #FFF;
+}
+
+.partner {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 0px;
+    border-bottom: 1px solid #f1f3f5;
+}
+
+.partner:first-of-type {
+    padding-top: 0px;
+}
+
+.partner:last-of-type {
+    border-bottom: 0px;
+    padding-bottom: 0px;
+}
+
+
+.partner-logo-img {
+    width: 150px;
+}
+
+.partner-title {
+    font-family: cocogoose, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    padding-bottom: 20px;
+}
+
+.partner-title-description {
+    overflow: hidden;
+    padding: 0px 50px;
+}
+
+
+.partner-description {
+    font-size: 16px;
+    text-align: justify;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.button-partner {
+    height: 38px;
+    line-height: 38px;
+    margin-top: 12px;
+    width: 100%;
+    border: 0px;
+    border-radius: 5px;
+    background-color: #000;
+    color: #FFF; 
+    text-transform: uppercase;
+    font-size: 11px;
+    font-weight: 700;
+    cursor:pointer;
+    margin-bottom: 20px;
+    transition: all 0.2s ease;
+}
+
+.button-partner:hover {
+    background-color: #ff3124;
+}
+
+
+
+footer {
+
+}

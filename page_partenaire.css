@@ -1,0 +1,250 @@
+body {
+    background-color: #F7F7F7;
+}
+
+* {
+    font-family: roboto, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;;
+    box-sizing: border-box;
+}
+
+@font-face { 
+    font-family: cocogoose; 
+    src: url('/assets/polices/cocogoose/Cocogoose\ Pro\ Semilight-trial.ttf'); 
+} 
+
+
+.img-logo {
+    width: 100%;
+    max-width: 350px;
+    display: block;
+    margin: auto;
+    padding-bottom: 0px;
+    border-radius: 15px;
+    box-shadow: 0px 8px 15px 5px rgb(0 0 0 / 10%);
+    margin-top: 50px;
+}
+
+.partner-info {
+    padding-top: 35px;
+}
+
+.partner-info-title {
+    text-align: left;
+    margin-left: 100px;
+    padding-left: 50px;
+    font-size: 25px;
+    padding-top: 45px;
+    padding-bottom: 0px;
+    font-family: cocogoose, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.partner-info-description {
+    text-align: justify;
+    font-size: 20px;
+    margin: 15px 100px;
+    padding: 30px 50px 30px 50px;
+    line-height: 35px;
+}
+
+.interaction {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.interaction-like {
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 15px 5px rgb(0 0 0 / 10%);
+    margin-right: 20px;
+
+}
+
+.interaction-dislike {
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 8px 15px 5px rgb(0 0 0 / 10%);
+    margin-left: 20px;
+}
+
+
+.button-like{
+    color: #52cc91;
+    font-size: 40px;
+}
+
+.button-like:hover{
+    color: #25db83;
+}
+
+
+.button-dislike{
+    color: #e05e55;
+    font-size: 40px;
+}
+
+.button-dislike:hover{
+    color: #ff3124;
+}
+
+
+.interaction-like-button {
+    border: transparent;
+    background-color: transparent;
+}
+
+.interaction-dislike-button {
+    border: transparent;
+    background-color: transparent;
+}
+
+.interaction-like-number,
+.interaction-dislike-number {
+    font-size: 15px;
+    text-align: center;
+    padding-top: 10px;
+    font-weight: bold;
+}
+
+.interaction-like-partner{
+    border-radius: 20px;
+    position: relative;
+
+}
+
+.interaction-dislike-partner{
+    border-radius: 20px;
+}
+.interaction-comments {
+    position: relative;
+}
+
+.interaction-comments-bg {
+    position: absolute;
+    z-index: -1;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    top: 80px;
+    left: 0px;
+    background-image: url('/assets/images/trame.png');
+    background-size: 50px;
+}
+
+
+.comments {
+    display: flex;
+    flex-direction: column;
+}
+
+.comments-title {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 18px;
+    font-family: cocogoose, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.comments-textarea {
+    outline: none;
+    height: 180px;
+    border-radius: 20px 20px;
+    margin-bottom: 45px;
+    font-size: 16px;
+    padding: 15px;
+    border: 1px solid #ddd;
+}
+
+.form-comments {
+    width: 100%;
+    max-width: 500px;
+    margin: auto;    
+}
+
+form.form_user input:focus {
+    border: 1px solid #ff3124;
+}
+
+.comments-button {
+    margin: 0px auto;
+    display: block;
+    height: 38px;
+    line-height: 38px;
+    margin-top: 12px;
+    width: 100px;
+    border: 0px;
+    border-radius: 5px;
+    background-color: #000;
+    color: #FFF; 
+    text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 700;
+    cursor:pointer;
+    margin-top: 0px;
+    margin-bottom: 20px;
+    transition: all 0.2s ease;
+}
+
+.comments-button:hover {
+    background-color: #ff3124;
+}
+
+
+
+.comment-created-at{
+    font-size: 13px;
+    color: #777;
+    padding-bottom: 10px;
+    padding-top: 5px;
+    
+}
+
+.comments-block {
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 40px 40px;
+    margin-top: 45px;
+    box-shadow: 0px 8px 15px 5px rgb(0 0 0 / 10%);
+    
+}
+
+.comment {
+    border-bottom: 1px solid #f1f3f5;
+    padding: 25px 0px;
+}
+
+.comment-username {
+    background: #eee;
+    display: inline-block;
+    padding: 5px 8px;
+    border-radius: 5px;
+}
+
+.comment:first-of-type{
+    padding-top: 0px;
+    
+}
+.comment:last-of-type {
+    border-bottom: 0px;
+    padding-bottom: 0px;
+}    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

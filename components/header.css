@@ -1,0 +1,68 @@
+.header {
+    padding: 10px;
+    padding-right: 20px;
+    border-bottom: 1px solid #EEE;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-content: center;
+    align-items: center;
+    background-color: #fff;
+}
+
+.header-logo {
+    width: 60px;
+}
+
+.header-logo-img {
+    width: 100%; /* prends toute la taille du parent (lien) */
+}
+
+.header-user {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-user-name {
+    padding-right: 20px;
+    font-weight: 600;
+    color: #000; 
+    font-size: 15px;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+.icon-logo {
+    font-size: 13px;
+}
+
+.header-user-name:hover {
+    color: #ff3124;
+}
+
+.header-form-button {
+    background-color: #000;
+    height: 30px;
+    width: 30px;
+    border: 0px;
+    border-radius: 5px;
+    color: #FFF; 
+    font-size: 15px;
+    cursor:pointer;
+    transition: all 0.2s ease;
+}
+
+.header-form-button:hover {
+    background-color: #ff3124;
+    
+}
+
+
+
+
+
+
