@@ -114,3 +114,9 @@ a.link-new-password {
   a.link-new-password:hover {
       color: #ff3124;
 }
+
+@media (max-width: 768px) {
+    form {
+        padding: 20px 0px;
+    }
+}

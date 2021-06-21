@@ -82,18 +82,20 @@ if (isset($_POST['submit_new_password'])) {
         
         <div class="titre">Réinitialiser mot de passe</div>
 
-        <div class="form-group form-group-with-icon form-group-with-text">
-            <label for="username">Nom d'utilisateur</label>
-
-            <?php if ($user): ?>
-            <div class="form-group-text answer"><?php echo $user['username']; ?></div>
-            <input type="hidden" name="username" value="<?php echo $user['username']; ?>" required />
-            <?php else: ?>
-            <input id="username" type="text" name="username" required />
-            <?php endif ?> 
-            <i class="fas fa-user form-group-icon"></i>
-
-        </div>
+        <?php if ($user): ?>
+            <div class="form-group form-group-with-icon form-group-with-text">
+                <label for="username">Nom d'utilisateur</label>
+                <div class="form-group-text answer"><?php echo $user['username']; ?></div>
+                <input type="hidden" name="username" value="<?php echo $user['username']; ?>" required />
+                <i class="fas fa-user form-group-icon"></i>
+            </div>
+        <?php else: ?>
+            <div class="form-group form-group-with-icon">
+                <label for="username">Nom d'utilisateur</label>
+                <input id="username" type="text" name="username" required />
+                <i class="fas fa-user form-group-icon"></i>
+            </div>
+        <?php endif ?> 
 
 
         <?php if (!$user): ?>

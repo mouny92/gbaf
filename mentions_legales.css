@@ -36,3 +36,9 @@
 .présention-du-site a:hover {
     color: red;
 }
+
+@media (max-width: 768px) {
+    .bloc {
+        margin: 0px;
+    }
+}

@@ -90,3 +90,13 @@ form.form_user button {
 form.form_user button:hover {
     background-color: #ff3124;
 }
+
+@media (max-width: 768px) {
+    .titre {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    form.form_user {
+        padding: 0px 20px;
+    }
+}

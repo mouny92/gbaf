@@ -188,7 +188,9 @@
         
         <?php include 'components/header.php'; ?>
 
-        <img class="img-logo" src="<?php echo $partner['logo_url']; ?>"/>
+        <div class="logo">
+            <img class="logo-img" src="<?php echo $partner['logo_url']; ?>"/>
+        </div>
 
         <div class="partner-info">
             <h1 class="partner-info-title"> 
