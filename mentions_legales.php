@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="mentions_legales.css">
     <?php include 'components/css-imports.php'; ?>
     <title>Mentions légales</title>
+    <link rel="icon" href="assets/images/logo.png" type="image/x-icon">
   
 </head>
 

@@ -1,6 +1,12 @@
 <?php
+
+include 'utils/validators.php';
+
 $user = null;
 $answer_correct = false;
+
+$error_form = false;
+$error_password_invalid = false;
 
 // on cherche username dans la BDD
 if (isset($_POST['submit_username']) || isset($_POST['submit_answer']) || isset($_POST['submit_new_password'])) {
@@ -27,26 +33,33 @@ if (isset($_POST['submit_answer'])) {
 
 // on change le mot de passe
 if (isset($_POST['submit_new_password'])) {
-    $request = $bdd->prepare(
-        'UPDATE users 
-        SET password = :password
-        WHERE id = :id'     
-    );
+    if (!is_password_valid($_POST['new_password'])) {
+        $error_password_invalid = true;
+        $error_form = true;
+    }
 
-    $request->execute(
-        array( 
-            'password' => password_hash($_POST['new_password'], PASSWORD_DEFAULT),
-            'id' => $user['id']
-        )
-    );
-
-    session_start();
-    $_SESSION['id'] = $user['id'];
-    $_SESSION['username'] = $user['username'];
-    $_SESSION['firstname'] = $user['firstname'];
-    $_SESSION['lastname'] = $user['lastname'];
-    header('Location: index.php');
-    exit();
+    if (!$error_form) {
+        $request = $bdd->prepare(
+            'UPDATE users 
+            SET password = :password
+            WHERE id = :id'     
+        );
+    
+        $request->execute(
+            array( 
+                'password' => password_hash($_POST['new_password'], PASSWORD_DEFAULT),
+                'id' => $user['id']
+            )
+        );
+    
+        session_start();
+        $_SESSION['id'] = $user['id'];
+        $_SESSION['username'] = $user['username'];
+        $_SESSION['firstname'] = $user['firstname'];
+        $_SESSION['lastname'] = $user['lastname'];
+        header('Location: index.php');
+        exit();
+    }
 }
 
     
@@ -59,11 +72,12 @@ if (isset($_POST['submit_new_password'])) {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Réinitialiser mot de passe</title>
-    <link rel="stylesheet" href="nouveau_mot_de_passe.css">
+    <title>Nouveau mot de passe</title>
+    <link rel="icon" href="assets/images/logo.png" type="image/x-icon">
 
     <!-- Importations des fichiers CSS -->
     <?php include 'components/css-imports.php'; ?>
+    <link rel="stylesheet" href="nouveau_mot_de_passe.css">
 </head>
 <body>
 
@@ -74,6 +88,14 @@ if (isset($_POST['submit_new_password'])) {
 
     <?php if (isset($_POST['submit_answer']) && !$answer_correct): ?>
         <div class="error_message">Votre réponse est incorrecte</div>
+    <?php endif ?> 
+
+    <?php if ($error_form): ?>
+        <div class="error_message">
+            <?php if ($error_password_invalid): ?>
+                <div><?php echo password_invalid_message(); ?></div>
+            <?php endif ?>
+        </div>
     <?php endif ?> 
 
     <form action="" method=POST>

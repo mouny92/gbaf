@@ -1,14 +1,50 @@
 <?php 
 
-$error_password_not_match = false;
+include 'utils/validators.php';
+
+$error_form = false;
+$error_firstname_invalid = false;
+$error_lastname_invalid = false;
+$error_username_invalid = false;
 $error_username_exists = false;
+$error_password_invalid = false;
+$error_password_mismatch = false;
+$error_secret_question_invalid = false;
+$error_secret_answer_invalid = false;
 
 if (isset($_POST['submit'])) {
 
-    if ($_POST['password'] != $_POST['password_bis']) { // comparaison du mot de passe et mot de passe confirmation 
-        $error_password_not_match = true;
+    // regex
+    if (!is_firstname_valid($_POST['firstname'])) {
+        $error_firstname_invalid = true;
+        $error_form = true;
     }
-    else {
+    if (!is_lastname_valid($_POST['lastname'])) {
+        $error_lastname_invalid = true;
+        $error_form = true;
+    }
+    if (!is_username_valid($_POST['username'])) {
+        $error_username_invalid = true;
+        $error_form = true;
+    }
+    if (!is_password_valid($_POST['password'])) {
+        $error_password_invalid = true;
+        $error_form = true;
+    }
+    if (!is_password_same($_POST['password'], $_POST['password_bis'])) { // comparaison du mot de passe et mot de passe confirmation 
+        $error_password_mismatch = true;
+        $error_form = true;
+    }
+    if (!is_secret_question_valid($_POST['secret_question'])) {
+        $error_secret_question_invalid = true;
+        $error_form = true;
+    }
+    if (!is_secret_answer_valid($_POST['secret_answer'])) {
+        $error_secret_answer_invalid = true;
+        $error_form = true;
+    }
+
+    if (!$error_form) {
         $bdd = new PDO('mysql:host=localhost;dbname=gbaf','root','root');
         $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
@@ -20,6 +56,7 @@ if (isset($_POST['submit'])) {
 
         if ($user) {
             $error_username_exists = true;
+            $error_form = true;
         }
         else {
             // créer un nouvel utilisateur
@@ -68,21 +105,51 @@ if (isset($_POST['submit'])) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Inscription</title>
-    <link rel="stylesheet" href="inscription.css">
+    <link rel="icon" href="assets/images/logo.png" type="image/x-icon">
 
     <!-- Importations des fichiers CSS -->
     <?php include 'components/css-imports.php'; ?>
+    <link rel="stylesheet" href="inscription.css">
 </head>
 
 <body>
 
-    <?php if ($error_password_not_match): ?>
-        <div class="error_message">Mot de passe différent</div>  
+    <?php if ($error_form): ?>
+        <div class="error_message">
+            <?php if ($error_password_mismatch): ?>
+                <div><?php echo password_mismatch_message(); ?></div>  
+            <?php endif ?>
+
+            <?php if ($error_username_exists): ?>
+                <div>Ce nom d'utilsateur existe déjà</div>  
+            <?php endif ?>
+
+            <?php if ($error_firstname_invalid): ?>
+                <div><?php echo firstname_invalid_message(); ?></div>
+            <?php endif ?>
+
+            <?php if ($error_lastname_invalid): ?>
+                <div><?php echo lastname_invalid_message(); ?></div>
+            <?php endif ?>
+
+            <?php if ($error_username_invalid): ?>
+                <div><?php echo username_invalid_message(); ?></div>
+            <?php endif ?>
+
+            <?php if ($error_password_invalid): ?>
+                <div><?php echo password_invalid_message(); ?></div>
+            <?php endif ?>
+
+            <?php if ($error_secret_question_invalid): ?>
+                <div><?php echo secret_question_invalid_message(); ?></div>
+            <?php endif ?>
+
+            <?php if ($error_secret_answer_invalid): ?>
+                <div><?php echo secret_answer_invalid_message(); ?></div>
+            <?php endif ?>
+        </div>
     <?php endif ?>
 
-    <?php if ($error_username_exists): ?>
-        <div class="error_message">Ce nom d'utilsateur existe déjà</div>  
-    <?php endif ?>
 
 <!-- Formulaire d'inscription -->
 

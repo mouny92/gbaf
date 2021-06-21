@@ -66,6 +66,23 @@ body {
     left: 0px;
 }
 
+.error_message {
+    font-size: 15px;
+    color: #ff3124;
+    text-align: center;
+    margin: 0px auto;
+    padding: 20px 20px;
+    background-color: #ffeeed;
+    border-radius: 10px;
+}
+
+.error_message div {
+    padding-bottom: 10px;
+}
+
+.error_message div:last-of-type {
+    padding-bottom: 0px;
+}
 
 
 .bloc-line {
